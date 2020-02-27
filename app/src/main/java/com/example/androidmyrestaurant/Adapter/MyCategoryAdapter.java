@@ -1,21 +1,25 @@
 package com.example.androidmyrestaurant.Adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.androidmyrestaurant.Common.Common;
+import com.example.androidmyrestaurant.FoodListActivity;
 import com.example.androidmyrestaurant.Interface.IOnRecyclerViewClickListener;
 import com.example.androidmyrestaurant.Model.Category;
+import com.example.androidmyrestaurant.Model.EventBus.FoodListEvent;
 import com.example.androidmyrestaurant.R;
 import com.squareup.picasso.Picasso;
+
+import org.greenrobot.eventbus.EventBus;
 
 import java.util.List;
 
@@ -48,8 +52,9 @@ public class MyCategoryAdapter extends RecyclerView.Adapter<MyCategoryAdapter.My
         holder.txt_categorys.setText(categoryList.get(position).getName());
 
         holder.setListener((view, position1) -> {
-            //implement late
-            Toast.makeText(context, ""+categoryList.get(position1).getName(), Toast.LENGTH_SHORT).show();
+            //send stick post event to FoodListActivity
+            EventBus.getDefault().postSticky(new FoodListEvent(true,categoryList.get(position)));
+            context.startActivity(new Intent(context, FoodListActivity.class));
         });
     }
 

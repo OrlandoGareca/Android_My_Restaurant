@@ -24,4 +24,6 @@
     <string name="nearby_restaurant">Restaurantes Cercano</string>
     <string name="orden_history">Historial de pedidos</string>
     <string name="update_info">Actualizar información</string>
+    <string name="money_sign">Bs</string>
+    <string name="our_specialized">Nuestra especializada</string>
 </resources>
