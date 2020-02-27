@@ -4,7 +4,8 @@
     <color name="colorPrimaryDark">@color/colorPrimary</color>
     <color name="colorAccent">#ff7b65</color>
     <color name="button_color">@color/colorPrimary</color>
-
+    <color name="divider">#F7F5F4</color>
+    <color name="colorPrice">#616161</color>
 
     <color name="black">#000000</color>
     <color name="jet">#222222</color>
